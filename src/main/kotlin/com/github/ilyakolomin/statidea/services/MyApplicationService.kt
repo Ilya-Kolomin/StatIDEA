@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.ilyakolomin.statidea.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.ilyakolomin.statidea.MyBundle
 
 class MyApplicationService {
 
