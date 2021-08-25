@@ -10,6 +10,8 @@ StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as t
 
 The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. So that there are no business goals and the product will be distributed free of charge.
 
+[Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
+
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
 - [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
