@@ -44,7 +44,9 @@ To keep everything working, do not remove `<!-- ... -->` sections.
 
 ## Authors
 [Ilya Kolomin](https://github.com/Ilya-Kolomin)
+
 [Andrey Khoroshavin](https://github.com/Andrew174194)
+
 [Amir Khuzin](https://github.com/Amirka-Kh)
 
 ---
