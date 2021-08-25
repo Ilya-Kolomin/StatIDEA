@@ -42,6 +42,11 @@ To keep everything working, do not remove `<!-- ... -->` sections.
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 
+## Authors
+[Ilya Kolomin](https://github.com/Ilya-Kolomin)
+[Andrey Khoroshavin](https://github.com/Andrew174194)
+[Amir Khuzin](https://github.com/Amirka-Kh)
+
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 
