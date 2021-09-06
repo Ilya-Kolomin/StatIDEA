@@ -8,7 +8,7 @@
 ## Description
 StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as the use of the keyboard (typed symbols, used shortcuts, copy/paste usage, and etc.) and mouse (number of clicks, what actions programmer performed, time spent using mouse, and etc.).
 
-The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. So that there are no business goals and the product will be distributed free of charge.
+The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. The product will be distributed free of charge.
 
 [Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
 
