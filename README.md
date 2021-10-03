@@ -8,9 +8,32 @@
 ## Description
 StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as the use of the keyboard (typed symbols, used shortcuts, copy/paste usage, and etc.) and mouse (number of clicks, what actions programmer performed, time spent using mouse, and etc.).
 
+This plugin will be useful for programmers who want to improve their productivity. For example, he might show the client that he is using the mouse too often to create a new file, which might be a good trigger to learn how to use a shortcut for him. Another example is that a user may periodically enter the same pattern; with our plugin, the user can detect this and create a shortcut to save their time in the future.
+
 The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. The product will be distributed free of charge.
 
 [Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
+
+## Project requirements
+### required features
+1. Collect the number of prints, clicks, and keyboard entries for statistics.
+2. Show the statistics of clicks and keyboard typing.
+3. Show graphs of usages of some features and performance.
+### non-functional requirements
+1. Security        > Confidentiality > Users should have access to their stats only by their JetBrain account. Could be achieved by a built-in authentication mechanism.
+2. Portability     > Installability  > The plugin should work correctly on all JetBrains IDEs (CLion, PyCharm, etc.). Could be achieved by using the recommended template for plugins and avoiding IDE-specific features. 
+3. Usability       > Accessibility   > The program should collect stats for any symbols and languages that users use. Could be achieved by using the UTF-8 coding.
+4. Maintainability > Modifiability   > Every modification should be automatically built and deployed. Could be achieved by using GitHub Actions.
+
+## Design decisions
+1. Client contains files with counters on local machine.
+2. Client is connected to the server (if possible).
+3. Client gets latest information from database (server) and rewrites local counters.
+4. Client collects number of actions (keyboard pressing, mouse usage, menus calls) during some small specified time.
+5. Client sends this information to the server.
+6. In the end, client ends the session, server updates values in the database.
+
+This architecture design reduces the database load and allows to save last counters’ state in case of errors from client.
 
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
