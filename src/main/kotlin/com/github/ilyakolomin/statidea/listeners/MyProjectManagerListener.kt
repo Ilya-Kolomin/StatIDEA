@@ -10,6 +10,6 @@ internal class MyProjectManagerListener : ProjectManagerListener {
 
     override fun projectOpened(project: Project) {
         project.service<MyProjectService>()
-        val applicationService = service<MyApplicationService>()
+        service<MyApplicationService>()
     }
 }
