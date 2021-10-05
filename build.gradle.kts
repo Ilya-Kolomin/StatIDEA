@@ -28,6 +28,7 @@ repositories {
 }
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    implementation("com.1stleg:jnativehook:2.0.2")
 }
 
 // Configure gradle-intellij-plugin plugin.
