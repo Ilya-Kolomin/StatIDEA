@@ -25,6 +25,8 @@ The main objective of this project is to learn how to construct and develop open
 
 [Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
 <!-- Plugin description end -->
+#### Demo
+![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/demo.gif)
 
 ## Project requirements
 ### required features
