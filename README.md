@@ -5,6 +5,16 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/17724-statidea)
 
 # StatIDEA
+
+## Content
+1. [Description](#description)
+3. [Project requirements](#project-requirements)
+4. [Design](#design)
+5. [Architecture](#architecture)
+6. [Analysis](#analysis)
+7. [Template ToDo list](#template-todo-list)
+8. [Installation](#installation)
+
 ## Description
 <!-- Plugin description -->
 StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as the use of the keyboard (typed symbols, used shortcuts, copy/paste usage, and etc.) and mouse (number of clicks, what actions programmer performed, time spent using mouse, and etc.).
@@ -27,7 +37,7 @@ The main objective of this project is to learn how to construct and develop open
 3. Usability       > Accessibility   > The program should collect stats for any symbols and languages that users use. Could be achieved by using the UTF-8 coding.
 4. Maintainability > Modifiability   > Every modification should be automatically built and deployed. Could be achieved by using GitHub Actions.
 
-## Design decisions
+## Design
 1. Client contains files with counters on local machine.
 2. Client is connected to the server (if possible).
 3. Client gets latest information from database (server) and rewrites local counters.
@@ -36,6 +46,10 @@ The main objective of this project is to learn how to construct and develop open
 6. In the end, client ends the session, server updates values in the database.
 
 This architecture design reduces the database load and allows to save last counters’ state in case of errors from client.
+
+## Architecture
+
+## Analysis
 
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
