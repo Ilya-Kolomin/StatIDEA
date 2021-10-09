@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/17724-statidea)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/17724-statidea)
 
-# StatIDEA
+***
 
 ## Content
 1. [Description](#description)
@@ -12,14 +12,17 @@
 > * [Brief artifact description](#brief-artifact-description)
 > * [Demo](#demo)
 2. [Project requirements](#project-requirements)
-> * [user stories](#user-stories)
-> * [required features](#required-features)
-> * [non-functional requirements](#non-functional-requirements)
+> * [Glossary](#glossary)
+> * [User Stories](#user-stories)
+> * [Required Features](#required-features)
+> * [Non-functional Requirements](#non-functional-requirements)
 3. [Design](#design)
 4. [Architecture](#architecture)
 5. [Analysis](#analysis)
 6. [Template ToDo list](#template-todo-list)
 7. [Installation](#installation)
+
+***
 
 ## Description
 ### Project description
@@ -46,8 +49,19 @@ We suggest that you first study the README, and in case of misunderstanding - vi
 ### Demo
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/demo.gif)
 
+***
+
 ## Project requirements
-### user stories
+### Glossary
+__`JetBrain`__ - software vendor specializing in the creation of development tools.
+
+__`Plugin`__ - a software component that adds a specific feature to an existing program.
+
+__`Shortcut`__ - a sequence or combination of keystrokes on a computer keyboard that invokes commands in software.
+
+__`IDE (Integrated development environment)`__ - a software application that provides comprehensive facilities to computer programmers for software development.
+
+### User Stories
 | User Type | User Story Title | User Story |
 | --- | --- | --- |
 | Plugin User | Account | As a user, I want to connect the plugin to my account so that my stats could be shared over multiple computers and IDEs |
@@ -55,17 +69,21 @@ We suggest that you first study the README, and in case of misunderstanding - vi
 | Plugin User | Statistics | As a user I want this plugin to show the collected statistic so that I could see it and make decisions |
 | Plugin User | Suggestions | As a user I want this plugin to suggest the usage of different shortcuts based on statistics so that my work at IDE will be faster |
 | Developer of plugin | Technologies | As a developer, I want to learn the JetBrains’ documentation of creating plugins so that I could develop this plugin |
-### required features
+
+### Required Features
 1. Collect the number of prints, clicks, and keyboard entries for statistics.
 2. Show the statistics of clicks and keyboard typing.
 3. Show graphs of usages of some features and performance.
-### non-functional requirements
+
+### Non-functional Requirements
 | Characteristics | Sub-characteristics | Definition |
 | --- | --- | --- |
 | Security | Confidentiality | Users should have access to their stats only by their JetBrain account. Could be achieved by a built-in authentication mechanism|
 | Portability | Installability | The plugin should work correctly on all JetBrains IDEs (CLion, PyCharm, etc.). Could be achieved by using the recommended template for plugins and avoiding IDE-specific features |
 | Usability | Accessibility | The program should collect stats for any symbols and languages that users use. Could be achieved by using the UTF-8 coding |
 | Maintainability | Modifiability | Every modification should be automatically built and deployed. Could be achieved by using GitHub Actions |
+
+***
 
 ## Design
 1. Client contains files with counters on local machine.
@@ -77,9 +95,25 @@ We suggest that you first study the README, and in case of misunderstanding - vi
 
 This architecture design reduces the database load and allows to save last counters’ state in case of errors from client.
 
+UML diagram description
+![]()
+
+Sequence diagram description
+![]
+
+SOLID principles
+***
+
 ## Architecture
+Static view description
+![]()
+Dynamic view description
+![]()
+***
 
 ## Analysis
+
+***
 
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
@@ -97,6 +131,7 @@ This specific section is a source for the [plugin.xml](/src/main/resources/META-
 
 To keep everything working, do not remove `<!-- ... -->` sections. 
 
+***
 
 ## Installation
 
@@ -110,6 +145,7 @@ To keep everything working, do not remove `<!-- ... -->` sections.
   Download the [latest release](https://github.com/Ilya-Kolomin/StatIDEA/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+***
 
 ## Authors
 [Ilya Kolomin](https://github.com/Ilya-Kolomin)
