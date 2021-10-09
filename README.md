@@ -8,36 +8,64 @@
 
 ## Content
 1. [Description](#description)
-3. [Project requirements](#project-requirements)
-4. [Design](#design)
-5. [Architecture](#architecture)
-6. [Analysis](#analysis)
-7. [Template ToDo list](#template-todo-list)
-8. [Installation](#installation)
+> * [Project description](#project-description)
+> * [Brief artifact description](#brief-artifact-description)
+> * [Demo](#demo)
+2. [Project requirements](#project-requirements)
+> * [user stories](#user-stories)
+> * [required features](#required-features)
+> * [non-functional requirements](#non-functional-requirements)
+3. [Design](#design)
+4. [Architecture](#architecture)
+5. [Analysis](#analysis)
+6. [Template ToDo list](#template-todo-list)
+7. [Installation](#installation)
 
 ## Description
+### Project description
 <!-- Plugin description -->
 StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as the use of the keyboard (typed symbols, used shortcuts, copy/paste usage, and etc.) and mouse (number of clicks, what actions programmer performed, time spent using mouse, and etc.).
 
 This plugin will be useful for programmers who want to improve their productivity. For example, he might show the client that he is using the mouse too often to create a new file, which might be a good trigger to learn how to use a shortcut for him. Another example is that a user may periodically enter the same pattern; with our plugin, the user can detect this and create a shortcut to save their time in the future.
 
 The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. The product will be distributed free of charge.
-
-[Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
 <!-- Plugin description end -->
-#### Demo
+
+### Brief artifact description
+The artifact has following section: 
+* glossary
+* bussiness goals and objectives
+* roles and responsibilies
+* requirement analysis and specifications (features, user stories, non-functional requirements)
+* software development plan
+* prototype
+* development views (static view, dynamic view, allocation view)
+
+We suggest that you first study the README, and in case of misunderstanding - visit [Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
+
+### Demo
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/demo.gif)
 
 ## Project requirements
+### user stories
+| User Type | User Story Title | User Story |
+| --- | --- | --- |
+| Plugin User | Account | As a user, I want to connect the plugin to my account so that my stats could be shared over multiple computers and IDEs |
+| Plugin User | Statistics | As a user I want this plugin to collect my statistics of mouse and keyboard usage so that I could make optimizing decisions. |
+| Plugin User | Statistics | As a user I want this plugin to show the collected statistic so that I could see it and make decisions |
+| Plugin User | Suggestions | As a user I want this plugin to suggest the usage of different shortcuts based on statistics so that my work at IDE will be faster |
+| Developer of plugin | Technologies | As a developer, I want to learn the JetBrains’ documentation of creating plugins so that I could develop this plugin |
 ### required features
 1. Collect the number of prints, clicks, and keyboard entries for statistics.
 2. Show the statistics of clicks and keyboard typing.
 3. Show graphs of usages of some features and performance.
 ### non-functional requirements
-1. Security        > Confidentiality > Users should have access to their stats only by their JetBrain account. Could be achieved by a built-in authentication mechanism.
-2. Portability     > Installability  > The plugin should work correctly on all JetBrains IDEs (CLion, PyCharm, etc.). Could be achieved by using the recommended template for plugins and avoiding IDE-specific features. 
-3. Usability       > Accessibility   > The program should collect stats for any symbols and languages that users use. Could be achieved by using the UTF-8 coding.
-4. Maintainability > Modifiability   > Every modification should be automatically built and deployed. Could be achieved by using GitHub Actions.
+| Characteristics | Sub-characteristics | Definition |
+| --- | --- | --- |
+| Security | Confidentiality | Users should have access to their stats only by their JetBrain account. Could be achieved by a built-in authentication mechanism|
+| Portability | Installability | The plugin should work correctly on all JetBrains IDEs (CLion, PyCharm, etc.). Could be achieved by using the recommended template for plugins and avoiding IDE-specific features |
+| Usability | Accessibility | The program should collect stats for any symbols and languages that users use. Could be achieved by using the UTF-8 coding |
+| Maintainability | Modifiability | Every modification should be automatically built and deployed. Could be achieved by using GitHub Actions |
 
 ## Design
 1. Client contains files with counters on local machine.
