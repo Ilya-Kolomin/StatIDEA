@@ -8,7 +8,7 @@ import kotlin.collections.HashMap
 @Serializable
 data class StatisticsKeeper(
     var countKeys: Int = 0,
-    var countClicks: String = "0",
+    var countClicks: Int = 0,
     var countMoves: Int = 0,
     var pressedKeys: HashMap<String, Int> = HashMap(),
     var keysWithTime: ArrayList<DataWithTime<String>> = ArrayList(),
@@ -23,7 +23,7 @@ data class StatisticsKeeper(
     }
 
     fun mouseClick(click: Int) {
-        countClicks = (countClicks.toInt() + 1).toString()
+        countClicks++
         clicksWithTime.add(DataWithTime(click))
     }
 
