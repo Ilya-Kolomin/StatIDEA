@@ -34,20 +34,21 @@ StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as t
 
 This plugin will be useful for programmers who want to improve their productivity. For example, he might show the client that he is using the mouse too often to create a new file, which might be a good trigger to learn how to use a shortcut for him. Another example is that a user may periodically enter the same pattern; with our plugin, the user can detect this and create a shortcut to save their time in the future.
 
-The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. The product will be distributed free of charge.
+The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. The product will be distributed free of charge with the official JetBrains plugin marketplace or manually via GitHub.
 <!-- Plugin description end -->
 
 ### Brief artifact description
+
+Link for Artifact - https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true
+
 The artifact has the following section:
 * Business Goals
 * Stakeholders and their responsibilities
-* Functional requirements
-* Non-functional requirements
+* Functional and non-functional requirements
 * Software Development plan
 * Architecture (static and dynamic views)
 * User scenarios
 * UML class diagram
-* Linter and test coverage description
 * Future perspectives
 
 We suggest that you first study the README, and in case of misunderstanding - visit [Artifact](https://docs.google.com/document/d/1pzEI4KoVcqn5pdFqiqAIp8Q0a2v1-GzP/edit?usp=sharing&ouid=111082605146895567204&rtpof=true&sd=true)
@@ -98,8 +99,7 @@ StatisticsKeeper, DataWithTime,    SessionService, EventHandlerMouseMotion, Even
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/UML.jpg)
 
 ### Sequence diagram description
-In this diagram you can find how a user interacts with a plugin. A timeline goes vertically from top to 
-bottom, user starts the IDE, which invokes StatIDEA plugin, it starts handlers and internal classes, when reads saved statistics and in case of keyboard interaction show the statistic. Other details you can read from the diagram:
+In this diagram, you can find how a user interacts with a plugin. A timeline goes vertically from top to bottom. User starts the IDE, which invokes StatIDEA plugin, it starts handlers and internal classes, when reads saved statistics and in case of keyboard interaction show the statistic. Other details you can read from the diagram:
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/sequence.jpg)
 
 ### SOLID principles
@@ -144,7 +144,7 @@ In __Storage part__ we have 2 modules: StorageManager which talks with backend, 
 
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/static_view.png)
 
-### dynamic view description
+### Dynamic view description
 
 In this view we draw how the system works during runtime, how different modules interact with each other. For example, `Event handlers` update statistics in `StatisticsKeeper`, while `StatisticsKeeper` is used to provide stats to `StatisticsWindow`.
 
