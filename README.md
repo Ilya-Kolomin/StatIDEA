@@ -95,13 +95,30 @@ __`IDE (Integrated development environment)`__ - a software application that pro
 
 This architecture design reduces the database load and allows to save last counters’ state in case of errors from client.
 
-UML diagram description
+#### UML diagram description
 ![]()
 
-Sequence diagram description
-![]
+#### Sequence diagram description
+![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/sequence.jpg)
 
-SOLID principles
+#### SOLID principles
+There are some code examples where SOLID principles holds.
+Below you can see how `MyProjectManagerListener` follows __Interface Segregation Principle__
+because it implements an interface, also there are other classes which implements 1 or 2 interfaces.
+
+```
+internal class MyProjectManagerListener : ProjectManagerListener {
+
+    override fun projectOpened(project: Project) {
+        service<SessionService>()
+    }
+
+    override fun projectClosing(project: Project) {
+        super.projectClosing(project)
+        StorageManager.saveStatistics(service<SessionService>().statisticsKeeper)
+    }
+}
+```
 ***
 
 ## Architecture
