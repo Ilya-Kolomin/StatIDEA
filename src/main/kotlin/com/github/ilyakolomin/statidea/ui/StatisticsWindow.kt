@@ -14,7 +14,7 @@ class StatisticsWindow(statisticsKeeper: StatisticsKeeper) {
     private var countMoves: JLabel? = null
     private var daysTable: JTable? = null
     var statisticsWindowContent: JPanel? = null
-    val daysAtWeek = 7
+    private val daysAtWeek = 1 + 1 + 1 + 1 + 1 + 1 + 1
     val countKeysAtDay: ArrayList<Int> = ArrayList(daysAtWeek)
 
     init {
