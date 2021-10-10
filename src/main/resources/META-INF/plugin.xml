@@ -8,8 +8,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.ilyakolomin.statidea.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.ilyakolomin.statidea.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.ilyakolomin.statidea.services.SessionService"/>
+        <toolWindow
+                id="StatIDEA"
+                anchor="right"
+                secondary="false"
+                factoryClass="com.github.ilyakolomin.statidea.ui.UIRenderFactory" />
     </extensions>
 
     <applicationListeners>
