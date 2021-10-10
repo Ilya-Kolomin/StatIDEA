@@ -119,6 +119,13 @@ internal class MyProjectManagerListener : ProjectManagerListener {
     }
 }
 ```
+Also we should not forget what since we follow __Interface Segragation Principle__ it also means what
+we hold __Dependency Inversion Principle__.
+
+Now let's look to these to objects:
+`object SessionService`, `object StorageManager `
+they follow __Single Responsibility Principle__ sincle first only has 3 function, while second one only 2.
+
 ***
 
 ## Architecture
