@@ -100,13 +100,16 @@ __`IDE (Integrated development environment)`__ - a software application that pro
 
 This architecture design reduces the database load and allows to save last counters’ state in case of errors from client.
 
-#### UML diagram description
+### UML diagram description
+StatisticsKeeper, DataWithTime,    SessionService, EventHandlerMouseMotion, EventHandlerKeyboard, EventHandlerMouse,  StatisticsWindow, StorageManager, UIRenderFactory
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/UML.jpg)
 
-#### Sequence diagram description
+### Sequence diagram description
+In this diagram you can find how a user interacts with a plugin. A timeline goes verticaly from top to 
+bottom, user starts the IDE, which invokes StatIDEA plugin, it start handlers and internal classes, when reads saved statistics and in case of keyboard interaction show the statistic. Other details you can read from the diagram:
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/sequence.jpg)
 
-#### SOLID principles
+### SOLID principles
 There are some code examples where SOLID principles holds.
 Below you can see how `MyProjectManagerListener` follows __Interface Segregation Principle__
 because it implements an interface, also there are other classes which implements 1 or 2 interfaces.
@@ -128,8 +131,9 @@ Also we should not forget what since we follow __Interface Segragation Principle
 we hold __Dependency Inversion Principle__.
 
 Now let's look to these to objects:
-`object SessionService`, `object StorageManager `
-they follow __Single Responsibility Principle__ sincle first only has 3 function, while second one only 2.
+`object SessionService`, `object StorageManager ` they follow __Single Responsibility Principle__ sincle first only has 3 function, while second one only 2.
+
+So, overall we have hold 3 principles: Single Responsibility Principle, Interface Segragation Principle and Dependency Inversion Principle.
 
 ***
 
