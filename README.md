@@ -96,7 +96,7 @@ __`IDE (Integrated development environment)`__ - a software application that pro
 This architecture design reduces the database load and allows to save last counters’ state in case of errors from client.
 
 #### UML diagram description
-![]()
+![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/UML.jpg)
 
 #### Sequence diagram description
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/sequence.jpg)
