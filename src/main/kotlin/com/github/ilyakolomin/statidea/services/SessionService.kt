@@ -8,7 +8,6 @@ import org.jnativehook.mouse.NativeMouseEvent
 import org.jnativehook.mouse.NativeMouseListener
 import org.jnativehook.mouse.NativeMouseMotionListener
 
-
 object SessionService {
 
     val statisticsKeeper: StatisticsKeeper = StorageManager.restoreStatistics()

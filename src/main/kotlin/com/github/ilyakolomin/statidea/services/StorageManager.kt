@@ -18,6 +18,7 @@ object StorageManager {
         return try {
             Json.decodeFromString(StatisticsKeeper.serializer(), File(fileName).bufferedReader().readLine())
         } catch (e: FileNotFoundException) {
+            e.printStackTrace()
             StatisticsKeeper()
         }
     }
