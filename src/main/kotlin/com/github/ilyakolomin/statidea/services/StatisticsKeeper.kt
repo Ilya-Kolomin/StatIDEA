@@ -1,10 +1,9 @@
 package com.github.ilyakolomin.statidea.services
 
 import kotlinx.serialization.Serializable
-import java.util.*
+import java.util.Date
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
-
 
 @Serializable
 data class StatisticsKeeper(
@@ -21,12 +20,10 @@ data class StatisticsKeeper(
         keysWithTime.add(DataWithTime(key))
     }
 
-
     fun mouseClick(click: Int) {
         countClicks = (countClicks.toInt() + 1).toString()
         clicksWithTime.add(DataWithTime(click))
     }
-
 
     fun mouseMove() {
         countMoves++
