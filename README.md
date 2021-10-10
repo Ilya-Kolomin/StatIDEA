@@ -23,7 +23,8 @@
 4. [Architecture](#architecture)
 > * [Static view description](#static-view-description)
 > * [Dynamic view description](#dynamic-view-description)
-5. [Installation](#installation)
+5. [Build](#build)
+6. [Installation](#installation)
 
 ***
 
@@ -33,6 +34,12 @@
 StatIDEA is a plugin for JetBrains’ IDEs to measure programmer stats such as the use of the keyboard (typed symbols, used shortcuts, copy/paste usage, etc.) and mouse (number of clicks, what actions programmer performed, time spent using mouse, etc.).
 
 This plugin will be useful for programmers who want to improve their productivity. For example, he might show the client that he is using the mouse too often to create a new file, which might be a good trigger to learn how to use a shortcut for him. Another example is that a user may periodically enter the same pattern; with our plugin, the user can detect this and create a shortcut to save their time in the future.
+
+StatIDEA follows the next business goals:
+- Control the performance of programmers
+- Collect the statistics of the keyboard usage
+- Collect the statistics of the mouse usage
+
 
 The main objective of this project is to learn how to construct and develop open-source projects and study software system analysis. The product will be distributed free of charge with the official JetBrains plugin marketplace or manually via GitHub.
 <!-- Plugin description end -->
@@ -67,6 +74,10 @@ __`Plugin`__ - a software component that adds a specific feature to an existing 
 __`Shortcut`__ - a sequence or combination of keystrokes on a computer keyboard that invokes commands in software.
 
 __`IDE (Integrated development environment)`__ - a software application that provides comprehensive facilities to computer programmers for software development.
+
+__`Handler`__ – a routine/function/method which is focused on certain special tasks.
+
+__`Java virtual machine (JVM)`__ – a software that enables a computer to run programs written on Java-like programming language (Kotlin in our case)
 
 ### User Stories
 | User Type | User Story Title | User Story |
@@ -123,10 +134,9 @@ internal class MyProjectManagerListener : ProjectManagerListener {
 Also, we should not forget what since we follow __Interface Segregation Principle__ it also means what
 we hold __Dependency Inversion Principle__.
 
-Now let's look to these to objects:
-`object SessionService`, `object StorageManager ` they follow __Single Responsibility Principle__ since first only has 3 function, while second one only 2.
+Moreover, all our classes follow __Single Responsibility Principle__. Every class implements only one specific task which it was designed for. For instance, `StorageManager` only works with files.
 
-So, overall we have hold 3 principles: Single Responsibility Principle, Interface Segregation Principle and Dependency Inversion Principle.
+As for the Open-Close principle, we are applying an **Observer** design paradigm for our `EvenetHandler` classes, which helps maintain this principle because it allows in future register new handlers without modification of existing implementation.
 
 ***
 
@@ -153,6 +163,12 @@ __backend side__.
 
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/dynamic_view.png)
 ***
+
+## Build
+
+In our project we have automated building for new commits. It performs **testing**, **linting**, draft of release completion and verification. Moreover, we have automated publishing of new releases into the *JetBrains marketplace*.
+
+For linting we are using `detekt` technology. It will not allow the project to build if there are formatting or styling violations. So that its result you can check at `Actions` tab.
 
 ## Installation
 
