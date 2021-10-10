@@ -105,10 +105,14 @@ SOLID principles
 ***
 
 ## Architecture
-Static view description
-![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/static_view.jpg)
-Dynamic view description
-![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/dynamic_view.jpg)
+
+__Static view description__
+
+![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/static_view.png)
+
+__Dynamic view description__
+
+![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/dynamic_view.png)
 ***
 
 ## Analysis
