@@ -15,6 +15,7 @@ class StatisticsWindow(statisticsKeeper: StatisticsKeeper) {
     private var daysTable: JTable? = null
     var statisticsWindowContent: JPanel? = null
     val countKeysAtDay: ArrayList<Int> = ArrayList(7)
+    val daysAtWeek = 7
 
     init {
         setCountKeysText("Count of typed symbols: " + statisticsKeeper.countKeys)
@@ -23,25 +24,27 @@ class StatisticsWindow(statisticsKeeper: StatisticsKeeper) {
 
         daysTable!!.model = object : AbstractTableModel() {
 
+            val numberOfRows = 2
+
             init {
                 val currentDate = LocalDate.now()
-                for (i in 0..6) {
+                for (i in 0 until daysAtWeek) {
                     countKeysAtDay.add(0)
                 }
                 for (keyWithTime in statisticsKeeper.keysWithTime) {
                     val daysAgo = Period.between(LocalDate.parse(keyWithTime.date), currentDate).days
-                    if (daysAgo < 7) {
-                        countKeysAtDay[6 - daysAgo]++
+                    if (daysAgo < daysAtWeek) {
+                        countKeysAtDay[daysAtWeek - 1 - daysAgo]++
                     }
                 }
             }
 
             override fun getRowCount(): Int {
-                return 2
+                return numberOfRows
             }
 
             override fun getColumnCount(): Int {
-                return 7
+                return daysAtWeek
             }
 
             override fun getValueAt(rowIndex: Int, columnIndex: Int): Any {
@@ -51,7 +54,6 @@ class StatisticsWindow(statisticsKeeper: StatisticsKeeper) {
                     countKeysAtDay[columnIndex]
                 }
             }
-
         }
     }
 
@@ -68,8 +70,7 @@ class StatisticsWindow(statisticsKeeper: StatisticsKeeper) {
     }
 
     fun updateCountLastDay() {
-        countKeysAtDay[6]++
+        countKeysAtDay[daysAtWeek - 1]++
         daysTable!!.updateUI()
     }
-
 }
