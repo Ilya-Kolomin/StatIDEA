@@ -26,6 +26,7 @@ object SessionService {
             val key = NativeKeyEvent.getKeyText(e.keyCode)
             statisticsKeeper.keyPress(key)
             statisticsWindow.setCountKeysText("Count of typed symbols: " + statisticsKeeper.countKeys)
+            statisticsWindow.updateCountLastDay()
         }
 
         override fun nativeKeyReleased(p0: NativeKeyEvent?) {

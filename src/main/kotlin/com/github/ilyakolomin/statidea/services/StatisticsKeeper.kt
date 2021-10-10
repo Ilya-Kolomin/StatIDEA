@@ -1,7 +1,7 @@
 package com.github.ilyakolomin.statidea.services
 
 import kotlinx.serialization.Serializable
-import java.util.Date
+import java.time.LocalDate
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -11,20 +11,20 @@ data class StatisticsKeeper(
     var countClicks: Int = 0,
     var countMoves: Int = 0,
     var pressedKeys: HashMap<String, Int> = HashMap(),
-    var keysWithTime: ArrayList<DataWithTime<String>> = ArrayList(),
-    var clicksWithTime: ArrayList<DataWithTime<Int>> = ArrayList()
+    var keysWithTime: ArrayList<DataWithDate<String>> = ArrayList(),
+    var clicksWithTime: ArrayList<DataWithDate<Int>> = ArrayList()
 ) {
 
     fun keyPress(key: String) {
         countKeys++
         val value = pressedKeys.getOrDefault(key, 0) + 1
         pressedKeys[key] = value
-        keysWithTime.add(DataWithTime(key))
+        keysWithTime.add(DataWithDate(key))
     }
 
     fun mouseClick(click: Int) {
         countClicks++
-        clicksWithTime.add(DataWithTime(click))
+        clicksWithTime.add(DataWithDate(click))
     }
 
     fun mouseMove() {
@@ -32,5 +32,5 @@ data class StatisticsKeeper(
     }
 
     @Serializable
-    data class DataWithTime<T>(var data: T, var date: String = Date().toString())
+    data class DataWithDate<T>(var data: T, var date: String = LocalDate.now().toString())
 }
