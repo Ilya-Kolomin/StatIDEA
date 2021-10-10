@@ -132,9 +132,22 @@ they follow __Single Responsibility Principle__ sincle first only has 3 function
 
 __Static view description__
 
+In our static view we have 3 layers: `IDE Viewer Side`, `Backend side` and `Storage part`. 
+
+In __IDE Viewer Side__ we have 3 modules responsible for client interactions. 
+
+In __Backend side__ we have 4 modules, which processes clients inputs, applies his changes and talks with Storage part.
+
+In __Storage part__ we have 2 modules: StorageManager which talks with backend, StatIDEA_stats.json where records and session are saved.
+
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/static_view.png)
 
 __Dynamic view description__
+
+In this view we draw how the system works during runtime, how different modules interact with each other. For exaple, `Event handlers` update statistics in `StatisticsKeeper`, while `StatisticsKeeper` is used to provide stats to `StatisticsWindow`.
+
+Also we can see that `StorageManager` talks with `SessionService` and `StatiscsKeeper` which are on 
+__backend side__.
 
 ![](https://github.com/Ilya-Kolomin/StatIDEA/blob/main/images/dynamic_view.png)
 ***
